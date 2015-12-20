@@ -37,10 +37,8 @@ BOARD_KERNEL_SEPARATED_DT := true
 BOARD_CUSTOM_BOOTIMG_MK := device/sony/yukon-common/mkbootimg.mk
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
 
-BOARD_KERNEL_CMDLINE := androidboot.hardware=yukon androidboot.selinux=permissive
-BOARD_KERNEL_CMDLINE += user_debug=31 msm_rtb.filter=0x37
-BOARD_KERNEL_CMDLINE += console=ttyHSL0,115200,n8
-BOARD_KERNEL_CMDLINE += coherent_pool=8M vmalloc=400M
+BOARD_KERNEL_CMDLINE := androidboot.hardware=yukon androidboot.bootdevice=msm_sdcc.1
+BOARD_KERNEL_CMDLINE += user_debug=31 msm_rtb.filter=0x37 androidboot.selinux=permissive
 
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
